@@ -1,12 +1,31 @@
 <?
 
 get_header();
-  get_header('test');// = header-test.php
+get_header('test'); // = header-test.php
 
 get_footer();
-  get_footer('test');// = footer-test.php
+get_footer('test'); // = footer-test.php
 
 get_sidebar();
+
+
+
+the_post();
+
+
+
+if (have_posts()) : while (have_posts()) : the_post();
+?>
+    <h1><? the_title(); ?></h1>
+    <? the_post_thumbnail('news-main', array('alt' => get_the_title(), 'class' => 'page-news__img')); ?>
+    <time>
+      <?= get_the_date(); ?>
+      <?= ' - ' . get_the_time(); ?>
+    </time>
+<?
+  endwhile;
+endif;
+
 
 
 
