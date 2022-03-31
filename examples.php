@@ -31,7 +31,7 @@ endif;
 
 get_template_part('some-dir/some-template');
 get_post_format(); //'aside', 'chat', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio'
-
+get_template_part('some-dir/some-template', get_post_format());//some-dir/some-template-chat if get_post_format = chat
 
 
 is_home();
