@@ -1,5 +1,7 @@
 <?
 
+<form action="<?=admin_url('admin-ajax.php?action=our_send_mail_handler');?>"></form>/* our_send_mail_handler in functions.php*/
+
 get_header();
 get_header('test'); // = header-test.php
 
