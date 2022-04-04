@@ -38,3 +38,5 @@ get_template_part('some-dir/some-template', get_post_format());//some-dir/some-t
 
 
 is_home();
+is_category();
+is_single();
