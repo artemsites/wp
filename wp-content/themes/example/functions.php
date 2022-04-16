@@ -11,11 +11,14 @@ add_action('wp_enqueue_scripts', 'add_styles');
 add_action('wp_footer', 'add_scripts');
 add_action('after_setup_theme', 'reg_nav_menu');
 add_action('after_setup_theme', 'reg_theme_supports');
+
 add_filter('nav_menu_css_class', 'add_class_for_item_nav_menu', 0, 3);
 add_filter('navigation_markup_template', 'custom_pagination_template', 10, 2);
+
 add_action('init', 'reg_taxonomies');
 add_action('init', 'reg_post_types');
 add_action('init', 'reg_taxonomies_for_posts');
+add_action('widgets_init', 'reg_sidebar_widgets');
 // add_action('wp_ajax_custom_send_mail', 'custom_send_mail');
 // add_action('wp_ajax_nopriv_custom_send_mail', 'custom_send_mail');
 
@@ -31,6 +34,7 @@ function test_action_function()
 {
   return 'TEST';
 }
+//do_action('test_action');
 
 
 
@@ -74,7 +78,7 @@ function reg_nav_menu()
 function reg_theme_supports()
 {
   add_theme_support('post-thumbnails', array('page', 'post', 'news'));
- 
+
   add_theme_support('post-formats', array('aside', 'chat', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio')); //aside chat gallery link image quote status video audio
 
   add_theme_support('custom-logo', [
@@ -166,6 +170,23 @@ function reg_post_types()
   ]);
 }
 
+
+
+function reg_sidebar_widgets()
+{
+  register_sidebar(array(
+    'name'          => 'Сайдбар (панель виджетов)',
+    'id'            => "sidebar-widgets",
+    'description'   => '',
+    'class'         => '',
+    'before_widget' => '<li id="%1$s" class="widget %2$s">',
+    'after_widget'  => "</li>\n",
+    'before_title'  => '<h2 class="widgettitle">',
+    'after_title'   => "</h2>\n",
+    'before_sidebar' => '', // WP 5.6
+    'after_sidebar'  => '', // WP 5.6
+  ));
+}
 
 
 function reg_taxonomies()
