@@ -1,4 +1,4 @@
 #### Изучение на курсе «Записи курса "Интернет-магазин на WP + Woo 1.0"»   
   Остановился:  
-    11 урок дочерние темы
-      https://glo-academy.org/teach/control/lesson/view/id/20703274
+    12 урок - 7 минут
+      https://glo-academy.org/teach/control/lesson/view/id/20703275
