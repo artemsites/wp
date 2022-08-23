@@ -152,7 +152,7 @@ function reg_post_types()
     // 'exclude_from_search' => false, // зависит от public
     // 'show_ui'             => null, // зависит от public
     // 'show_in_nav_menus'   => null, // зависит от public
-    'show_in_menu'        => true, // показывать ли в меню адмнки
+    'show_in_menu'        => true, // показывать ли в меню админки
     // 'show_in_admin_bar'   => null, // зависит от show_in_menu
     'show_in_rest'        => false, // добавить в REST API. C WP 4.7
     'rest_base'           => false, // $post_type. C WP 4.7
